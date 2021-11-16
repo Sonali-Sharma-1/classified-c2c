@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "307556845231",
+    "project_id": "winwinapp-d3500",
+    "storage_bucket": "winwinapp-d3500.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307556845231:android:86f84dde84fb135c6f365a",
+        "android_client_info": {
+          "package_name": "com.example.winwinapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307556845231-etp27ru2l1ir448rjiougon9r3fsuvbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4tG8H4h2kpCVANBzMa2cIJadDavwLFUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307556845231-etp27ru2l1ir448rjiougon9r3fsuvbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

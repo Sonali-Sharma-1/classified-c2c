@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WinWinApp</string>
+    <string name="app_icon_img_desc">App Icon</string>
+    <string name="login_fragment_label">Login Fragment</string>
+    <string name="signup_fragment_label">Signup Fragment</string>
+    <string name="bottom_nav_home_label">Home</string>
+    <string name="signup_login_text">Already have an account? Log In</string>
+
+</resources>
