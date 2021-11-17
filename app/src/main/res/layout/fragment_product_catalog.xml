@@ -8,51 +8,53 @@
         android:id="@+id/tv_product_catalog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/product_catalog"
-        android:textStyle="bold"
-        android:textSize="@dimen/twenty_sp"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
+        android:text="@string/product_catalog"
         android:textColor="@color/black"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:textSize="@dimen/twenty_sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/tv_find_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/find_product"
-        android:textSize="@dimen/twenty_sp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_product_catalog"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:text="@string/find_product"
         android:textColor="@color/complete_info"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:textSize="@dimen/twenty_sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_product_catalog" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spn_filter_by"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_find_product"
         android:layout_marginStart="20dp"
-        android:tooltipText="Filter by"
-        android:textAlignment="center"
         android:layout_marginTop="20dp"
-        />
+        android:entries="@array/filter_array"
+        android:textAlignment="center"
+        android:theme="@style/Spinner"
+        android:tooltipText="Filterby"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_find_product" />
 
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spn_select_category"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        app:layout_constraintStart_toEndOf="@+id/spn_filter_by"
-        app:layout_constraintTop_toBottomOf="@+id/tv_find_product"
         android:layout_marginStart="20dp"
-        android:tooltipText="Select Category"
-        android:textAlignment="center"
         android:layout_marginTop="20dp"
-        />
+        android:entries="@array/categories_array"
+        android:textAlignment="center"
+        android:theme="@style/Spinner"
+        android:tooltipText="Select Category"
+        app:layout_constraintStart_toEndOf="@+id/spn_filter_by"
+        app:layout_constraintTop_toBottomOf="@+id/tv_find_product" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,4 +31,18 @@
     <string name="product_catalog">Product catalog</string>
     <string name="find_product">Find the product you are looking for</string>
 
+    <string-array name="filter_array">
+        <item>All</item>
+        <item>Fixed Price</item>
+        <item>Auction</item>
+    </string-array>
+
+    <string-array name="categories_array">
+        <item>All</item>
+        <item>Cars</item>
+        <item>Home Appliances</item>
+        <item>Hot Sales</item>
+        <item>New Products</item>
+    </string-array>
+
 </resources>

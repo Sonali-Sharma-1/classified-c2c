@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:indeterminate="true"
-        app:indicatorColor="@color/blue_accent_300"
+        app:indicatorColor="@color/colorPrimary"
         app:indicatorDirectionCircular="clockwise"
         app:trackColor="@color/white"
         app:trackThickness="6dp" />
