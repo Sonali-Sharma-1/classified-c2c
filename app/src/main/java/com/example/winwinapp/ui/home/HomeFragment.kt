@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.winwinapp.data.dataclasses.Bidding
+import com.example.winwinapp.data.dataclasses.MockData
 import com.example.winwinapp.data.dataclasses.ProductX
 import com.example.winwinapp.databinding.FragmentHomeBinding
 import com.example.winwinapp.ui.RecyclerViewPaddingItemDecoration
@@ -18,6 +20,17 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by activityViewModels()
     private lateinit var productAdapter: ProductAdapter
+    private var mainList = mutableListOf<ProductX>()
+    private val filterBy by lazy { listOf("All", "Fixed Price", "Auction") }
+    private val categoriesList by lazy {
+        listOf(
+            "All",
+            "Cars",
+            "Home Appliances",
+            "Hot Sales",
+            "New Products"
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,44 +50,13 @@ class HomeFragment : Fragment() {
     private fun setObservers() {
     }
 
+
     private fun setViews() {
-        val mainList = mutableListOf<ProductX>()
-        val bidding = Bidding("", 10)
-        val biddingList = listOf(bidding)
-        val imageList: List<String> = listOf(
-            "https://falabella.scene7.com/is/image/Falabella/15276437_1?wid=1500&hei=1500&qlt=70",
-            "https://falabella.scene7.com/is/image/Falabella/15319633_1?wid=1500&hei=1500&qlt=70"
-        )
-        val productX = ProductX(
-            biddingList, 100, "abc", imageList, "item_desc",
-            "Wallets", "sonali1.work@gmail.com", "8687676788687", 1000
-        )
-
-
-        val bidding1 = Bidding("", 10)
-        val biddingList1 = listOf(bidding)
-        val imageList1: List<String> = listOf(
-            "https://falabella.scene7.com/is/image/Falabella/15276437_1?wid=1500&hei=1500&qlt=70",
-            "https://falabella.scene7.com/is/image/Falabella/15319633_1?wid=1500&hei=1500&qlt=70"
-        )
-        val productY= ProductX(
-            biddingList, 100, "abc", imageList, "item_desc",
-            "Wallets", "sonali1.work@gmail.com", "8687676788687", 1000
-        )
-
-        mainList.add(productX)
-        mainList.add(productY)
-
+        mainList = MockData.dataForForProductCatalog() as MutableList<ProductX>
         setProductsAdapter(mainList)
         binding.productsRecyclerView.apply {
-            val gridLayoutManager = GridLayoutManager(context, 2)
-//            gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-//                override fun getSpanSize(position: Int): Int {
-//                    TODO("Not yet implemented")
-//                }
-//            }
 
-            layoutManager = gridLayoutManager
+//            this.layoutManager = LinearLayoutManager
             adapter = productAdapter
             val itemDecoration = RecyclerViewPaddingItemDecoration(requireContext())
             if (itemDecorationCount == 0)

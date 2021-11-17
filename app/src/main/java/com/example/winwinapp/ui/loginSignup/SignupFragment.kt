@@ -20,9 +20,9 @@ import okhttp3.Call
 import okhttp3.ResponseBody
 
 
-
-
 class SignupFragment : LoginSignupBaseFragment<FragmentSignupBinding>() {
+
+    private val hashMap = HashMap<String, String>()
 
     override fun setViewBinding(): FragmentSignupBinding {
         return FragmentSignupBinding.inflate(layoutInflater)
@@ -35,7 +35,7 @@ class SignupFragment : LoginSignupBaseFragment<FragmentSignupBinding>() {
     override fun setUpViews() {
         super.setUpViews()
         setUpClickableLoginText()
-
+        mockDataForSignup()
         binding.btnSignup.setOnClickListener {
             submitLogin()
         }
@@ -63,15 +63,16 @@ class SignupFragment : LoginSignupBaseFragment<FragmentSignupBinding>() {
         val pass = binding.signupPasswordEditText
         val confirmPass = binding.signupCnfPasswordEditText
 
-        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(ApiService::class.java)
-        val registerInfo = SignUpBody(email.toString(), pass.toString(), confirmPass.toString())
-
-//        retrofitInstance.registerUser(registerInfo).enqueue(object : Callback<LoginResponse>{
-//            onFail
-//        })
-
+        if (hashMap.containsKey(email.text.toString()) && hashMap.containsValue(pass.text.toString())) {
+            findNavController().navigate(R.id.action_signup_to_login)
+        }
     }
 
-
-
+    private fun mockDataForSignup() {
+            hashMap["sonali@gmail.com"] = "lit"
+            hashMap["james@gmail.com"] = "xyz@123"
+            hashMap["akshay@gmail.com"] = "dummy@123"
+            hashMap["samuel@gmail.com"] = "mock@123"
+            println(hashMap)
+    }
 }
