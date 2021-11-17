@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.winwinapp.data.dataclasses.ProductX
+import com.example.winwinapp.databinding.ItemProductCatalogBinding
 import com.example.winwinapp.databinding.ProductsListItemBinding
 
 class ProductAdapter(list: List<ProductX>, private val context: Context) :
@@ -17,7 +18,7 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val viewType1 = ItemViewHolder(
-            ProductsListItemBinding.inflate(
+            ItemProductCatalogBinding.inflate(
                 LayoutInflater.from(
                     parent.context
                 ),
@@ -37,14 +38,19 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
 
     override fun getItemCount(): Int = productList.size
 
-    inner class ItemViewHolder(binding: ProductsListItemBinding) :
+    inner class ItemViewHolder(binding: ItemProductCatalogBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        private val productImage = binding.productImageView
-        private val productTitle = binding.productNameTv
-        private val productDesc = binding.productDesc
-        private val productPrice = binding.productPriceTv
-        private val productCard = binding.productCard
+        private val productDiscount = binding.tvProductDiscount
+        private val productTitle = binding.tvBrand
+        private val productDetails = binding.tvProductDetails
+        private val productPrice = binding.tvPrice
+        private val productDescription = binding.tvProductDescriptionDetails
+        private val sellerRating = binding.rbSellerBid
+        private val comments = binding.tvComments
+        private val productCard = binding.itemProductCatalog
+
+        private val productImage = binding.imgProduct
 
         fun bind(productData: ProductX) {
 
@@ -56,8 +62,10 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
                 .load(Uri.parse(productData.images[0]))
                 .into(productImage)
             productTitle.text = productData.name
-            productDesc.text = productData.item_description
+            productDescription.text = productData.item_description
+            sellerRating.rating = productData.rating.toFloat()
             productPrice.text = productData.price.toString()
+            comments.text = productData.commentCount.toString() + "comments"
         }
     }
 
