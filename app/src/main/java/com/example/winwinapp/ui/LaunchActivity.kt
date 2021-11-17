@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.example.winwinapp.MainActivity
 import com.example.winwinapp.R
 import com.example.winwinapp.databinding.SplashScreenBinding
 import com.example.winwinapp.ui.loginSignup.LoginSignUpActivity
@@ -24,6 +25,13 @@ class LaunchActivity : AppCompatActivity() {
     private fun setUpViews() {
         binding.btnBuyProducts.setOnClickListener {
             val intent = Intent(this, LoginSignUpActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.btnBecomeSeller.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("fromSellerFlow", true)
             startActivity(intent)
             finish()
         }

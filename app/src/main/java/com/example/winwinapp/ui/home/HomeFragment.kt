@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.winwinapp.R
@@ -19,6 +20,7 @@ import com.example.winwinapp.databinding.FragmentHomeBinding
 import com.example.winwinapp.databinding.FragmentProductCatalogBinding
 import com.example.winwinapp.ui.RecyclerViewPaddingItemDecoration
 import com.example.winwinapp.viewmodels.HomeViewModel
+import kotlin.properties.Delegates
 
 class HomeFragment : Fragment() {
 
@@ -26,27 +28,32 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by activityViewModels()
     private lateinit var productAdapter: ProductAdapter
     private var mainList = mutableListOf<ProductX>()
+    private var isFromProductFlow by Delegates.notNull<Boolean>()
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProductCatalogBinding.inflate(layoutInflater)
-        setViews()
-        setObservers()
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.actionBar?.hide()
+        setViews()
+        setObservers()
+        isFromProductFlow = arguments?.getBoolean("isFromProductFlow") == true
+        val data: Boolean? = activity?.intent?.extras?.getBoolean("fromSellerFlow", false)
+        if (data == true) {
+            activity?.intent?.putExtra("fromSellerFlow", false)
+            findNavController().navigate(R.id.action_home_to_seller)
+        }
     }
 
-    private fun setObservers() {
-
-    }
+    private fun setObservers() {}
 
 
     @RequiresApi(Build.VERSION_CODES.O)
