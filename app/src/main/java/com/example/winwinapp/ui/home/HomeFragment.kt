@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
     private lateinit var productAdapter: ProductAdapter
     private var mainList = mutableListOf<ProductX>()
     private var isFromProductFlow by Delegates.notNull<Boolean>()
-    private var isFromSeller:Boolean? = false
+    private var isFromSeller: Boolean? = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         setViews()
         setObservers()
         isFromSeller = activity?.intent?.extras?.getBoolean("fromSellerFlow", false)
-        Log.d("Home",""+isFromProductFlow + isFromSeller)
+        Log.d("Home", "" + isFromProductFlow + isFromSeller)
         if (isFromSeller == true) {
             activity?.intent?.putExtra("fromSellerFlow", false)
             findNavController().navigate(R.id.action_home_to_seller)
@@ -64,13 +64,12 @@ class HomeFragment : Fragment() {
     private fun setViews() {
         binding.spnFilterBy
             .findViewById<TextView>(R.id.spn_filter_by)
-        if(isFromProductFlow){
+        if (isFromProductFlow) {
             binding.spnFilterBy.visibility = View.GONE
             binding.spnSelectCategory.visibility = View.GONE
             binding.tvFindProduct.text = "Products for sale"
             binding.tvProductCatalog.text = "Your Products for sale or bid"
-        }
-        else{
+        } else {
             binding.spnFilterBy.visibility = View.VISIBLE
             binding.spnSelectCategory.visibility = View.VISIBLE
             binding.tvFindProduct.text = "Product catalog"
@@ -101,6 +100,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setProductsAdapter(productsList: List<ProductX>?) {
-        productAdapter = ProductAdapter(productsList ?: emptyList(), requireContext(),isFromProductFlow)
+        productAdapter =
+            ProductAdapter(productsList ?: emptyList(), requireContext(), isFromProductFlow)
     }
 }
