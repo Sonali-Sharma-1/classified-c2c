@@ -16,7 +16,6 @@
         app:layout_constraintBottom_toTopOf="@id/home_bottom_navigation"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_falabella"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/home_nav_graph" />
 
