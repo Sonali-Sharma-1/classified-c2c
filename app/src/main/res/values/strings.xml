@@ -28,5 +28,7 @@
     <string name="set_price">Set a price</string>
     <string name="set_price_purchase">Set the price for purchase</string>
     <string name="btn_continue">Continue</string>
+    <string name="product_catalog">Product catalog</string>
+    <string name="find_product">Find the product you are looking for</string>
 
 </resources>
