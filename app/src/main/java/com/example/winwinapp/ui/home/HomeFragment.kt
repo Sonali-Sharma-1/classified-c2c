@@ -51,13 +51,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun setObservers() {
+
     }
 
 
     private fun setViews() {
-        binding.header.findViewById<TextView>(R.id.product_catalog)
-            .findViewById<TextView>(R.id.spn_filter_by)
-
         mainList = MockData.dataForForProductCatalog() as MutableList<ProductX>
         setProductsAdapter(mainList)
         binding.productsRecyclerView.apply {
