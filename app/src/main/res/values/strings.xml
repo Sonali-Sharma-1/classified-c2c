@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WinWinApp</string>
+    <string name="app_name">Hammer Time</string>
     <string name="app_icon_img_desc">App Icon</string>
     <string name="login_fragment_label">Login Fragment</string>
     <string name="signup_fragment_label">Signup Fragment</string>

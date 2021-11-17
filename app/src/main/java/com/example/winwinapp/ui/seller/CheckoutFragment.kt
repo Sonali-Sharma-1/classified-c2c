@@ -43,7 +43,7 @@ class CheckoutFragment : Fragment() {
         binding.tvName.text =  product.name
         val biddingList = Bidding("sonali", 290000)
         binding.tvBidPrice.text = "Your Bid"
-        binding.tvSubtotal.text = "$29.109.00"
+        binding.tvSubtotal.text = "$500.00"
         binding.tvTotal.text = "$500.000"
         binding.totalCmr.text = "$460.00"
     }
