@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -63,6 +64,13 @@ class HomeFragment : Fragment() {
 
         mainList = MockData.dataForForProductCatalog() as MutableList<ProductX>
         setProductsAdapter(mainList)
+
+        productAdapter.onClickListener = object : ProductAdapter.OnClickListener {
+            override fun onClick(productData: ProductX) {
+                findNavController().navigate(R.id.action_home_to_checkout)
+            }
+        }
+
         binding.productsRecyclerView.apply {
 
 //            this.layoutManager = LinearLayoutManager

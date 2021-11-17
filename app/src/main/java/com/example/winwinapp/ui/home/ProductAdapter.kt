@@ -49,14 +49,14 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
         private val productDescription = binding.tvProductDescriptionDetails
         private val sellerRating = binding.rbSellerBid
         private val comments = binding.tvComments
-        private val productCard = binding.itemProductCatalog
+        private val buttonBuy = binding.btnBuy
         private val totalRating = binding.tvTotalRating
 
         private val productImage = binding.imgProduct
 
         fun bind(productData: ProductX) {
 
-            productCard.setOnClickListener {
+            buttonBuy.setOnClickListener {
                 onClickListener.onClick(productData)
             }
 
@@ -67,7 +67,7 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
             productDescription.text = productData.item_description
             sellerRating.rating = productData.rating.toFloat()
             totalRating.text = productData.rating.toString() + "/5"
-            productPrice.text = "$"+" "+productData.price.toString()
+            productPrice.text = "$" + " " + productData.price.toString()
             comments.text = productData.commentCount.toString() + " " + " Comments"
         }
     }
