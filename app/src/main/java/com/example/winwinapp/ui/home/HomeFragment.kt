@@ -12,12 +12,13 @@ import com.example.winwinapp.data.dataclasses.Bidding
 import com.example.winwinapp.data.dataclasses.MockData
 import com.example.winwinapp.data.dataclasses.ProductX
 import com.example.winwinapp.databinding.FragmentHomeBinding
+import com.example.winwinapp.databinding.FragmentProductCatalogBinding
 import com.example.winwinapp.ui.RecyclerViewPaddingItemDecoration
 import com.example.winwinapp.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentProductCatalogBinding
     private val viewModel: HomeViewModel by activityViewModels()
     private lateinit var productAdapter: ProductAdapter
     private var mainList = mutableListOf<ProductX>()
@@ -37,7 +38,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(layoutInflater)
+        binding = FragmentProductCatalogBinding.inflate(layoutInflater)
         setViews()
         setObservers()
         return binding.root
