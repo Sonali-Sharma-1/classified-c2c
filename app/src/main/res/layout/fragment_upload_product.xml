@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_upload_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upload_product"
+        android:textStyle="bold"
+        android:textSize="@dimen/twenty_sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tv_complete_product_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/complete_product_info"
+        android:textSize="@dimen/twenty_sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_upload_product"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/complete_info"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_name"
+        android:textSize="@dimen/five_sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_complete_product_information"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/complete_info"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
+        android:hint="@string/enter_product_name"
+        android:textColorHint="@color/complete_info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:inputType="text"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_upload_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upload_image"
+        android:textSize="@dimen/five_sp"
+        app:layout_constraintTop_toBottomOf="@+id/et_product_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/complete_info"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tv_select_way_selling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_way_selling"
+        android:textSize="@dimen/twenty_sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_upload_image"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:textStyle="normal"
+        android:textColor="@color/complete_info"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <RadioGroup
+        android:id="@+id/rg_sell_way"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_select_way_selling">
+
+        <RadioButton
+            android:id="@+id/rb_direct_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_select_way_selling"
+            android:layout_marginStart="20dp"
+            android:text="@string/direct_sale"
+            android:textSize="15sp"
+            android:textColor="@color/radio_button_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_bid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/rb_direct_sale"
+            android:layout_marginStart="20dp"
+            android:text="@string/bid"
+            android:textSize="15sp"
+            android:textColor="@color/radio_button_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_direct_sale_bid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/rb_bid"
+            android:layout_marginStart="20dp"
+            android:text="@string/direct_sale_bid"
+            android:textSize="15sp"
+            android:textColor="@color/radio_button_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_set_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_price"
+        android:textSize="@dimen/five_sp"
+        app:layout_constraintTop_toBottomOf="@+id/rg_sell_way"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/complete_info"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_purchase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_set_price"
+        android:hint="@string/set_price_purchase"
+        android:textColorHint="@color/complete_info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:inputType="number"
+        />
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/btn_continue"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:cornerRadius="50dp"
+        android:shadowColor="@color/complete_info"
+        android:backgroundTint="@color/button_color"
+        app:layout_constraintTop_toBottomOf="@+id/et_purchase"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

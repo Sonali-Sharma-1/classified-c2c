@@ -14,4 +14,7 @@
     <color name="gray">#999999</color>
     <color name="gold">#FFD770</color>
     <color name="green_falabella">#aad500</color>
+    <color name ="complete_info">#333333</color>
+    <color name="button_color">#E1E1E1</color>
+    <color name="radio_button_text_color">#666666</color>
 </resources>
