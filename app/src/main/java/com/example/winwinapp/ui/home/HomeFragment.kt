@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.winwinapp.R
 import com.example.winwinapp.data.dataclasses.Bidding
 import com.example.winwinapp.data.dataclasses.MockData
 import com.example.winwinapp.data.dataclasses.ProductX
@@ -54,6 +56,9 @@ class HomeFragment : Fragment() {
 
 
     private fun setViews() {
+        binding.spnFilterBy
+            .findViewById<TextView>(R.id.spn_filter_by)
+
         mainList = MockData.dataForForProductCatalog() as MutableList<ProductX>
         setProductsAdapter(mainList)
         binding.productsRecyclerView.apply {
