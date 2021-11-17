@@ -2,6 +2,7 @@ package com.example.winwinapp.ui.home
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,7 @@ class HomeFragment : Fragment() {
     private lateinit var productAdapter: ProductAdapter
     private var mainList = mutableListOf<ProductX>()
     private var isFromProductFlow by Delegates.notNull<Boolean>()
+    private var isFromSeller:Boolean? = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,11 +46,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.actionBar?.hide()
+        isFromProductFlow = arguments?.getBoolean("isFromProduct") == true
         setViews()
         setObservers()
-        isFromProductFlow = arguments?.getBoolean("isFromProductFlow") == true
-        val data: Boolean? = activity?.intent?.extras?.getBoolean("fromSellerFlow", false)
-        if (data == true) {
+        isFromSeller = activity?.intent?.extras?.getBoolean("fromSellerFlow", false)
+        Log.d("Home",""+isFromProductFlow + isFromSeller)
+        if (isFromSeller == true) {
             activity?.intent?.putExtra("fromSellerFlow", false)
             findNavController().navigate(R.id.action_home_to_seller)
         }
@@ -61,6 +64,19 @@ class HomeFragment : Fragment() {
     private fun setViews() {
         binding.spnFilterBy
             .findViewById<TextView>(R.id.spn_filter_by)
+        if(isFromProductFlow){
+            binding.spnFilterBy.visibility = View.GONE
+            binding.spnSelectCategory.visibility = View.GONE
+            binding.tvFindProduct.text = "Products for sale"
+            binding.tvProductCatalog.text = "Your Products for sale or bid"
+        }
+        else{
+            binding.spnFilterBy.visibility = View.VISIBLE
+            binding.spnSelectCategory.visibility = View.VISIBLE
+            binding.tvFindProduct.text = "Product catalog"
+            binding.tvProductCatalog.text = "Find the product you are looking for"
+            isFromProductFlow = false
+        }
 
         mainList = MockData.dataForForProductCatalog() as MutableList<ProductX>
         setProductsAdapter(mainList)
@@ -85,6 +101,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setProductsAdapter(productsList: List<ProductX>?) {
-        productAdapter = ProductAdapter(productsList ?: emptyList(), requireContext())
+        productAdapter = ProductAdapter(productsList ?: emptyList(), requireContext(),isFromProductFlow)
     }
 }

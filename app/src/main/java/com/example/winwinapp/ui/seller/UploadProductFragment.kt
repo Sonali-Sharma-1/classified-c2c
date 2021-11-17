@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.winwinapp.R
@@ -37,7 +38,7 @@ class UploadProductFragment : Fragment(), RadioGroup.OnCheckedChangeListener {
         val price = binding.etPurchase.text
         binding.btnContinue.setOnClickListener {
             if (name != null && sellType != 0 && price != null) {
-               findNavController().navigate(R.id.action_product_to_home)
+               findNavController().navigate(R.id.action_product_to_home, bundleOf("isFromProduct" to true))
             }
         }
     }

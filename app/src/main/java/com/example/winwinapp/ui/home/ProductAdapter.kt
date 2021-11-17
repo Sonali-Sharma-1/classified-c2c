@@ -11,10 +11,11 @@ import com.example.winwinapp.data.dataclasses.ProductX
 import com.example.winwinapp.databinding.ItemProductCatalogBinding
 import com.example.winwinapp.databinding.ProductsListItemBinding
 
-class ProductAdapter(list: List<ProductX>, private val context: Context) :
+class ProductAdapter(list: List<ProductX>, private val context: Context,isFromProduct:Boolean) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var productList = list
+    var productFlow = isFromProduct
     lateinit var onClickListener: OnClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -51,6 +52,7 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
         private val comments = binding.tvComments
         private val buttonBuy = binding.btnBuy
         private val totalRating = binding.tvTotalRating
+        private val btn = binding.btnBuy
 
         private val productImage = binding.imgProduct
 
@@ -69,6 +71,13 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
             totalRating.text = productData.rating.toString() + "/5"
             productPrice.text = "$" + " " + productData.price.toString()
             comments.text = productData.commentCount.toString() + " " + " Comments"
+            if(productFlow){
+                btn.text = "Review & Confirm"
+            }
+            else{
+                btn.text = "Buy"
+            }
+
         }
     }
 
