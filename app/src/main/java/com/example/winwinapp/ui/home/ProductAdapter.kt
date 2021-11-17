@@ -63,7 +63,7 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
                 .into(productImage)
             productTitle.text = productData.name
             productDescription.text = productData.item_description
-            sellerRating.rating = productData.rating.toFloat()
+            sellerRating.rating = productData.rating
             productPrice.text = productData.price.toString()
             comments.text = productData.commentCount.toString() + "comments"
         }
