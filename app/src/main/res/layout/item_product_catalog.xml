@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="0dp"
+    app:strokeColor="#CCCCCC"
+    app:strokeWidth="1dp"
     android:id="@+id/item_product_catalog"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp">
 
     <ImageButton
         android:id="@+id/ib_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_launcher"
+        android:background="@drawable/close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,21 +50,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="Marca"
+        android:maxLines="1"
+        android:layout_marginEnd="10dp"
+        android:text="ahhgggg"
         android:textAllCaps="true"
         android:textColor="@color/gray"
         app:layout_constraintStart_toEndOf="@+id/img_product"
-        app:layout_constraintTop_toBottomOf="@+id/ib_close" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_fixed_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Marca"
-        android:textAllCaps="false"
-        android:textColor="@color/gray"
-        app:layout_constraintEnd_toStartOf="@+id/ib_close"
         app:layout_constraintTop_toBottomOf="@+id/ib_close" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -114,7 +115,7 @@
     <View
         android:id="@+id/vew_line"
         android:layout_width="0dp"
-        android:layout_height="0.1dp"
+        android:layout_height="1dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
@@ -145,7 +146,9 @@
         android:layout_marginTop="10dp"
         android:progressBackgroundTint="#F7B500"
         android:progressTint="#F7B500"
-        android:rating="5"
+        android:stepSize="1"
+        android:numStars="5"
+        android:isIndicator="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_seller_rating" />
 
@@ -156,7 +159,7 @@
         android:layout_marginEnd="-60dp"
         android:layout_marginTop="25dp"
         android:maxLines="1"
-        android:text="4.6/5"
+        android:text=""
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/rb_seller_bid"
@@ -178,7 +181,7 @@
     <View
         android:id="@+id/vew_line_second"
         android:layout_width="0dp"
-        android:layout_height="0.1dp"
+        android:layout_height="1dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="30dp"
@@ -204,6 +207,6 @@
         android:shadowColor="@color/complete_info"
         android:backgroundTint="#FF6200"
         app:layout_constraintTop_toBottomOf="@+id/vew_line_second"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

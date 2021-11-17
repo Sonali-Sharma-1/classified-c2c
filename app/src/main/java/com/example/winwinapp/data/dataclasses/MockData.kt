@@ -18,7 +18,7 @@ object MockData {
             "LED 55 AU9000 Crystal UHD 4K Smart TV 2021",
             "sonali1.work@gmail.com",
             "8687676788687",
-            89990, "4.6/5", 20
+            89990, "4.6", 20
         )
 
 
@@ -36,7 +36,7 @@ object MockData {
             "Vertuo Next Gray Coffee Maker + Milk Frother",
             "sonali1.work@gmail.com",
             "8687676788687",
-            224990, "4.3/5", 10
+            224990, "4.3", 10
 
         )
 
@@ -54,7 +54,7 @@ object MockData {
             "TH-25DM microwave",
             "sonali1.work@gmail.com",
             "8687676788687",
-            89990, "5/5", 1000
+            89990, "5", 1000
         )
 
         val bidding4 = Bidding("", 10)
@@ -71,7 +71,7 @@ object MockData {
             "LED 43 TU7090 Crystal UHD 4K Smart TV",
             "sonali1.work@gmail.com",
             "8687676788687",
-            699990, "4.4/5", 90
+            699990, "4.4", 90
         )
 
         val bidding5 = Bidding("", 10)
@@ -81,7 +81,7 @@ object MockData {
         )
         val product5 = ProductX(
             biddingList5, 1200000, "abc", imageList5, "DEMO APPLE TV 4K 32GBAPPLEMXGY2CI",
-            "Apple TV 4K 32GB", "sonali1.work@gmail.com", "8687676788687", 179990, "4.3/5", 15
+            "Apple TV 4K 32GB", "sonali1.work@gmail.com", "8687676788687", 179990, "4.3", 15
         )
 
         val bidding6 = Bidding("", 10)
@@ -98,7 +98,7 @@ object MockData {
             "Charge Essential Waterproof Bluetooth Speaker",
             "sonali1.work@gmail.com",
             "8687676788687",
-            129990, "4.6/5", 65
+            129990, "4.6", 65
         )
 
 

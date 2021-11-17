@@ -2,6 +2,7 @@ package com.example.winwinapp.ui.home
 
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -49,6 +50,7 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
         private val sellerRating = binding.rbSellerBid
         private val comments = binding.tvComments
         private val productCard = binding.itemProductCatalog
+        private val totalRating = binding.tvTotalRating
 
         private val productImage = binding.imgProduct
 
@@ -63,9 +65,13 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
                 .into(productImage)
             productTitle.text = productData.name
             productDescription.text = productData.item_description
+
+            //var ratingVal:Float =  ((productData.rating.toFloat()*5) /100)
+          //  Log.d("productadapter",""+ratingVal)
             sellerRating.rating = productData.rating.toFloat()
-            productPrice.text = productData.price.toString()
-            comments.text = productData.commentCount.toString() + "comments"
+            totalRating.text = productData.rating + "/ 5"
+            productPrice.text = "$"+" "+productData.price.toString()
+            comments.text = productData.commentCount.toString() + " " + " Comments"
         }
     }
 
