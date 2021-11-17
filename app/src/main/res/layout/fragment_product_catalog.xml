@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_product_catalog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_catalog"
+        android:textStyle="bold"
+        android:textSize="@dimen/twenty_sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tv_find_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/find_product"
+        android:textSize="@dimen/twenty_sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_product_catalog"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/complete_info"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spn_filter_by"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_find_product"
+        android:layout_marginStart="20dp"
+        android:tooltipText="Filter by"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spn_select_category"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@+id/spn_filter_by"
+        app:layout_constraintTop_toBottomOf="@+id/tv_find_product"
+        android:layout_marginStart="20dp"
+        android:tooltipText="Select Category"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
