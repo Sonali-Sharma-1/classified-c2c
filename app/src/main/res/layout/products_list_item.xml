@@ -105,16 +105,6 @@
             app:layout_constraintTop_toTopOf="@+id/product_actual_price_tv"
             android:text="25 % off" />
 
-        <ImageView
-            android:id="@+id/product_edit_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_button"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_edit_24"
-            app:tint="@color/gray" />
 
         <ImageView
             android:id="@+id/product_add_to_cart_button"

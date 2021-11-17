@@ -18,6 +18,7 @@ class LaunchActivity : AppCompatActivity() {
         binding = SplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setUpViews()
+        supportActionBar?.hide()
     }
 
     private fun setUpViews() {

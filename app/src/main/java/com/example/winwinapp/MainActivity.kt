@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         setUpNav()
     }
 
@@ -27,10 +27,10 @@ class MainActivity : AppCompatActivity() {
         navFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.homeFragment -> setBottomNavVisibility(View.VISIBLE)
-//                R.id.cartFragment -> setBottomNavVisibility(View.VISIBLE)
-//                R.id.accountFragment -> setBottomNavVisibility(View.VISIBLE)
-//                R.id.ordersFragment -> setBottomNavVisibility(View.VISIBLE)
-//                R.id.orderSuccessFragment -> setBottomNavVisibility(View.VISIBLE)
+                R.id.categoryFragment -> setBottomNavVisibility(View.VISIBLE)
+                R.id.myOrderFragment -> setBottomNavVisibility(View.VISIBLE)
+                R.id.fPayFragment -> setBottomNavVisibility(View.VISIBLE)
+                R.id.moreFragment -> setBottomNavVisibility(View.VISIBLE)
                 else -> setBottomNavVisibility(View.GONE)
             }
         }
