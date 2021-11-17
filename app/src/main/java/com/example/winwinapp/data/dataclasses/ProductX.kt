@@ -10,6 +10,6 @@ data class ProductX(
     val ownerEmail_id: String,
     val owner_contact: String,
     val price: Int,
-    val rating : String,
+    val rating : Float,
     val commentCount: Int,
 )

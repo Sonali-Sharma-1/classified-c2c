@@ -1,10 +1,12 @@
 package com.example.winwinapp.ui.home
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -24,17 +26,8 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by activityViewModels()
     private lateinit var productAdapter: ProductAdapter
     private var mainList = mutableListOf<ProductX>()
-    private val filterBy by lazy { listOf("All", "Fixed Price", "Auction") }
-    private val categoriesList by lazy {
-        listOf(
-            "All",
-            "Cars",
-            "Home Appliances",
-            "Hot Sales",
-            "New Products"
-        )
-    }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -56,9 +49,11 @@ class HomeFragment : Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setViews() {
         binding.spnFilterBy
             .findViewById<TextView>(R.id.spn_filter_by)
+
         mainList = MockData.dataForForProductCatalog() as MutableList<ProductX>
         setProductsAdapter(mainList)
         binding.productsRecyclerView.apply {

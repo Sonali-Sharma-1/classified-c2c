@@ -65,11 +65,8 @@ class ProductAdapter(list: List<ProductX>, private val context: Context) :
                 .into(productImage)
             productTitle.text = productData.name
             productDescription.text = productData.item_description
-
-            //var ratingVal:Float =  ((productData.rating.toFloat()*5) /100)
-          //  Log.d("productadapter",""+ratingVal)
             sellerRating.rating = productData.rating.toFloat()
-            totalRating.text = productData.rating + "/ 5"
+            totalRating.text = productData.rating.toString() + "/5"
             productPrice.text = "$"+" "+productData.price.toString()
             comments.text = productData.commentCount.toString() + " " + " Comments"
         }
