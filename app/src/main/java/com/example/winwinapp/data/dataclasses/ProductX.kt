@@ -9,5 +9,7 @@ data class ProductX(
     val name: String,
     val ownerEmail_id: String,
     val owner_contact: String,
-    val price: Int
+    val price: Int,
+    val rating : String,
+    val commentCount: Int,
 )
