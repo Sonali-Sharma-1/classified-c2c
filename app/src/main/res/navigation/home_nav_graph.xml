@@ -17,6 +17,12 @@
             app:popUpTo="@id/seller_fragment"
             app:popUpToInclusive="true" />
 
+        <action
+            android:id="@+id/action_home_to_checkout"
+            app:destination="@id/checkout_fragment"
+            app:popUpTo="@id/checkout_fragment"
+            app:popUpToInclusive="true" />
+
     </fragment>
 
     <fragment
@@ -50,7 +56,12 @@
             android:name="isFromProduct"
             app:argType="boolean"
             app:nullable="false" />
+    </fragment>
 
-
+    <fragment
+        android:id="@+id/checkout_fragment"
+        android:name="com.example.winwinapp.ui.seller.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout">
     </fragment>
 </navigation>
