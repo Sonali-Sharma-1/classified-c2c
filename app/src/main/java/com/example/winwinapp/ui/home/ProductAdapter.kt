@@ -45,7 +45,6 @@ class ProductAdapter(list: List<ProductX>, private val context: Context,isFromPr
 
         private val productDiscount = binding.tvProductDiscount
         private val productTitle = binding.tvBrand
-        private val productDetails = binding.tvProductDetails
         private val productPrice = binding.tvPrice
         private val productDescription = binding.tvProductDescriptionDetails
         private val sellerRating = binding.rbSellerBid
@@ -75,7 +74,7 @@ class ProductAdapter(list: List<ProductX>, private val context: Context,isFromPr
                 btn.text = "Review & Confirm"
             }
             else{
-                btn.text = "Buy"
+                btn.text = "Bid"
             }
 
         }

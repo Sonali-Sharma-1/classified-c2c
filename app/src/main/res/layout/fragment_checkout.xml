@@ -4,18 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_speed="1" />
-
     <TextView
         android:id="@+id/tv_place_bid"
         android:layout_width="wrap_content"
@@ -59,11 +47,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="40dp"
         android:maxLines="2"
         android:text="@string/name"
         android:textColor="@color/complete_info"
-        android:textSize="@dimen/five_sp"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/img_product"
         app:layout_constraintTop_toBottomOf="@id/tv_place_bid" />
 
@@ -73,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="20dp"
         android:gravity="end"
         android:hint="@string/enter_your_name"
@@ -100,7 +89,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-        android:hint="@string/enter_last_name"
         android:text="SubTotal"
         android:textColorHint="@color/complete_info"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -114,11 +102,20 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:gravity="end"
-        android:hint="@string/enter_last_name"
         android:text="$500.00"
         android:textColorHint="@color/complete_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ic_line" />
+
+    <ImageView
+        android:id="@+id/ic_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_line"
+        app:layout_constraintTop_toBottomOf="@id/tv_amount" />
 
     <TextView
         android:id="@+id/delivery_cost"
@@ -127,7 +124,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="@string/enter_last_name"
         android:text="Delivery Cost"
         android:textColorHint="@color/complete_info"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -144,6 +140,16 @@
         android:textColorHint="@color/complete_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_amount" />
+
+    <ImageView
+        android:id="@+id/ic_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_line"
+        app:layout_constraintTop_toBottomOf="@id/tv_dc_free" />
 
 
     <TextView

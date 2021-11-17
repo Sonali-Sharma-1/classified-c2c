@@ -42,9 +42,9 @@ class CheckoutFragment : Fragment() {
 
         binding.tvName.text = product.name
         binding.tvBidPrice.text = "Your Bid"
-        binding.tvSubtotal.text = "$500.00"
-        binding.tvTotal.text = "$500.000"
+        binding.tvAmount.text = "$500.00"
         binding.totalCmr.text = "$460.00"
+        binding.totalAmt.text = "$500.00"
 
         binding.btnPay.setOnClickListener {
             val builder = context?.let { it1 -> AlertDialog.Builder(it1) }
